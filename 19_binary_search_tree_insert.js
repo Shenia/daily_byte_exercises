@@ -5,9 +5,10 @@ class Node {
     this.left = left;
     this.value = value;
   }
+
   insert(value) {
     let node = this;
-    while(true) {
+    while (true) {
       if (value > node.value) {
         if (node.right) {
           node = node.right;
@@ -23,7 +24,7 @@ class Node {
           return;
         }
       }
-    } 
+    }
   }
 }
 
@@ -58,3 +59,5 @@ function iterativePrint(root) {
 example1 = new Node(2, new Node(1), new Node(3));
 // iterativePrint(binarySearchTreeInsert(example1, 4));
 
+// runtime: worst case O(n), best case O(logn)
+// space: O(1)
