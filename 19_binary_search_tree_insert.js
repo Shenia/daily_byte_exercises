@@ -57,9 +57,4 @@ function iterativePrint(root) {
 
 example1 = new Node(2, new Node(1), new Node(3));
 // iterativePrint(binarySearchTreeInsert(example1, 4));
-console.log(JSON.stringify(binarySearchTreeInsert(example1, 4), (key, value) => {
-  if (value === null) {
-      return undefined;
-  }
-  return value;
-}, 4));
+
