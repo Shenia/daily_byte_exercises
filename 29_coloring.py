@@ -55,23 +55,23 @@ check_output(coloring, example_2, False)
 check_output(coloring, example_3, False)
 
 # @ravenCondol's solution
-def isBipartite(graph):
-    if len(graph) == 0:
-        return True
-    node__set_num_map = {}
-    points_to_look_at_queue = [0]
-    while len(points_to_look_at_queue) != 0:
-        cur_node = points_to_look_at_queue.pop(0)
-        if node__set_num_map.get(cur_node, None) is None:
-            node__set_num_map[cur_node] = 0
-        cur_set_num = node__set_num_map[cur_node]
-        adj_vertices = graph[cur_node]
-        for adj_vertice in adj_vertices:
-            if node__set_num_map.get(adj_vertice, None) is not None:
-                if node__set_num_map[adj_vertice] == cur_set_num:
-                    return False
-                continue
-            else:
-                node__set_num_map[adj_vertice] = (node__set_num_map[cur_node] + 1) % 2
-            points_to_look_at_queue.append(adj_vertice)
-    return True
+# def isBipartite(graph):
+#     if len(graph) == 0:
+#         return True
+#     node__set_num_map = {}
+#     points_to_look_at_queue = [0]
+#     while len(points_to_look_at_queue) != 0:
+#         cur_node = points_to_look_at_queue.pop(0)
+#         if node__set_num_map.get(cur_node, None) is None:
+#             node__set_num_map[cur_node] = 0
+#         cur_set_num = node__set_num_map[cur_node]
+#         adj_vertices = graph[cur_node]
+#         for adj_vertice in adj_vertices:
+#             if node__set_num_map.get(adj_vertice, None) is not None:
+#                 if node__set_num_map[adj_vertice] == cur_set_num:
+#                     return False
+#                 continue
+#             else:
+#                 node__set_num_map[adj_vertice] = (node__set_num_map[cur_node] + 1) % 2
+#             points_to_look_at_queue.append(adj_vertice)
+#     return True
